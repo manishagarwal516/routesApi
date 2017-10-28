@@ -1,0 +1,4 @@
+development:
+  host: localhost
+  db_name: routes_api_development
+  port: 27017
