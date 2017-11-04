@@ -15,7 +15,7 @@ var routes = {
 				function(callback) {
 					var mongoSelectData = {
 						"collection": "routes",
-						"qry" : {"Imei":data.Imei, "Route_number": data.Route_number}
+						"qry" : {"Imei":data.Imei, "Route_number": data.Route_number, "Phone_number": data.Phone_number}
 					}
 					connector.mongoPool.query(mongoSelectData,function(err, result){
 						callback(null, result);
