@@ -81,12 +81,13 @@ var routes = {
 			if(searchKeys.indexOf(Object.keys(data)[i]) === -1) { errors.push('Invalid search key' + Object.keys(data)[i])}
 			if(Object.keys(data)[i] != "Date_time"){
 				mongoSelectData.qry[Object.keys(data)[i]] = {};
+				console.log(data);
 				mongoSelectData.qry[Object.keys(data)[i]]["$in"] = data[Object.keys(data)[i]].split(",");
 			}else{
 				console.log(Object.keys(data)[i].split(",")[0]);
 				mongoSelectData.qry[Object.keys(data)[i]] = {};
-				mongoSelectData.qry[Object.keys(data)[i]]["$gt"] = moment(data[Object.keys(data)[i]].split(",")[0], 'MM-DD-YYYY HH:mm').toDate();
-				mongoSelectData.qry[Object.keys(data)[i]]["$lt"] = moment(data[Object.keys(data)[i]].split(",")[1], 'MM-DD-YYYY HH:mm').toDate();
+				mongoSelectData.qry[Object.keys(data)[i]]["$gt"] = moment.utc(data[Object.keys(data)[i]].split(",")[0], 'MM-DD-YYYY HH:mm').toDate();
+				mongoSelectData.qry[Object.keys(data)[i]]["$lt"] = moment.utc(data[Object.keys(data)[i]].split(",")[1], 'MM-DD-YYYY HH:mm').toDate();
 			}	
 		}
 		console.log(mongoSelectData);
@@ -98,6 +99,21 @@ var routes = {
 			})
 			
 		}
+	},
+
+	getCodinates: function(params, res){
+		var errors = [];
+		console.log(params.id);
+		mongoSelectData = {
+			"collection": "routes",
+			"qry" : {"Route_number":parseInt(params.id)},
+			"projection": {"Location":1}
+		};
+		console.log(mongoSelectData);
+		
+		connector.mongoPool.query(mongoSelectData,function(err, result){
+			res(null, result);
+		})
 	},
 
 	liveLocation: function(data, projection, res){

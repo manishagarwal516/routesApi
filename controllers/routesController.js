@@ -11,6 +11,14 @@ var routes = {
 		});
 	},
 
+	getCodinates: function(req, res) {
+		routesModel.getCodinates(req.params, function(err, data){
+			controller.responsify(err, data, function(response){
+				res(response);
+			});
+		});
+	},
+
 	getAction: function(req, res) {
 		var projection = {
 				"_id" : 0
