@@ -17,7 +17,7 @@ var routes = {
 				function(callback) {
 					var mongoSelectData = {
 						"collection": "routes",
-						"qry" : {"Imei":data.Imei, "Route_number": data.Route_number, "Phone_number": data.Phone_number}
+						"qry" : {"Imei":data.Imei, "Route_number": data.Route_number}
 					}
 					connector.mongoPool.query(mongoSelectData,function(err, result){
 						callback(null, result);
@@ -44,13 +44,8 @@ var routes = {
 						var mongoSaveData = {
 							"collection": "routes",
 							"qry":{
-								"Accuracy": data.Accuracy,
 								"Imei": data.Imei,
-								"Direction": data.Direction,
-								"Speed": data.Speed,
-								"Distance": data.Distance,
 								"Route_number": data.Route_number,
-								"Phone_number": data.Phone_number,
 								"Date_time": new Date(data.Date_Time),
 								"Location" : [{
 									"Lat": data.Lat,
@@ -152,7 +147,7 @@ var routes = {
 		var errors = [],
 		mongoSelectData = {
 			"collection": "routes",
-			"distinct" : "Phone_number"
+			"distinct" : "Imei"
 		};
 		connector.mongoPool.query(mongoSelectData,function(err, result){
 			console.log(result);
@@ -171,6 +166,6 @@ var routes = {
 
 }
 
-var searchKeys = ["Phone_number","Date_time"]
-var insertKeys = ["Lat", "Accuracy", "Long", "Imei", "Direction", "Speed", "Distance", "Route_number", "Phone_number", "Date_Time"]
+var searchKeys = ["Phone_number","Date_time", "Imei"]
+var insertKeys = ["Lat", "Long", "Imei", "Route_number", "Date_Time"]
 module.exports = routes;
