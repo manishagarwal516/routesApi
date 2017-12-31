@@ -6,6 +6,8 @@ var connector = require('./appModel'),
 
 var routes = {
 	create: function(data, res){
+		console.log("Data received");
+		console.log(data);
 		if(Object.keys(data).length === 0) { return res("Please enter valid data"); }
 		var errors = routes.validate(data);
 		if(errors.length > 0){
@@ -38,6 +40,7 @@ var routes = {
 							callback(null, result);
 						});
 					}else{
+						console.log(moment(data.Date_Time).format())
 						var mongoSaveData = {
 							"collection": "routes",
 							"qry":{
@@ -48,7 +51,7 @@ var routes = {
 								"Distance": data.Distance,
 								"Route_number": data.Route_number,
 								"Phone_number": data.Phone_number,
-								"Date_time": moment(data.Date_Time, "MM-DD-YYYYTHH:mm:ss").toDate(),
+								"Date_time": new Date(data.Date_Time),
 								"Location" : [{
 									"Lat": data.Lat,
 									"Long": data.Long
@@ -56,7 +59,8 @@ var routes = {
 								]
 							}
 						}
-						console.log(moment(data.Date_Time, "MM-DD-YYYYTHH:mm:ss").toDate());
+						console.log("Data saved in mongodb");
+						console.log(mongoSaveData);
 						connector.mongoPool.insert(mongoSaveData,function(err, result){
 							callback(null, result);
 						})
