@@ -33,7 +33,7 @@ var routes = {
 							"collection": "routes",
 							"qry":{
 								condition : { "_id" : new ObjectID(mongoResult[0]["_id"])},
-								values : { "Location" : mongoResult[0].Location }	
+								values : { "Location" : mongoResult[0].Location, "Date_time": new Date(data.Date_Time) }	
 							}
 						}
 						connector.mongoPool.update(mongoUpdateData,function(err, result){
