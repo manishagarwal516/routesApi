@@ -27,7 +27,7 @@ router.get('/getDistinctPhoneNumber', function(req, res, next) {
     });
 });
 
-router.get('/codinates/:id', function(req, res, next) {
+router.get('/codinates/:id/:imei', function(req, res, next) {
     routes.getCodinates(req, function(data){
         res.send(data);
     });

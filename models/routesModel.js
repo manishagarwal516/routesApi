@@ -105,7 +105,7 @@ var routes = {
 		console.log(params.id);
 		mongoSelectData = {
 			"collection": "routes",
-			"qry" : {"Route_number":parseInt(params.id)},
+			"qry" : {"Route_number":parseInt(params.id),"Imei":params.imei},
 			"projection": {"Location":1}
 		};
 		console.log(mongoSelectData);
