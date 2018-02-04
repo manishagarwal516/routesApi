@@ -34,7 +34,7 @@ var routes = {
 				routes[key].source = {};
 				routes[key].source['Long'] = temp_data[temp_data.length - 1].Long;
 				routes[key].source['Lat'] = temp_data[temp_data.length - 1].Lat;	
-				routes[key].Date_time = moment(routes[key].Date_time).format("YYYY-MM-DD hh:mm:ss");
+				routes[key].Date_time = moment(routes[key].Date_time).format("DD-MM-YYYY  hh:mm:ss");
 			})
 			controller.responsify(err, routes, function(response){
 				res(response);
