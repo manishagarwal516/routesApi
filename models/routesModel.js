@@ -83,7 +83,6 @@ var routes = {
 				console.log(data);
 				mongoSelectData.qry[Object.keys(data)[i]]["$in"] = data[Object.keys(data)[i]].split(",");
 			}else{
-				console.log(Object.keys(data)[i].split(",")[0]);
 				mongoSelectData.qry[Object.keys(data)[i]] = {};
 				mongoSelectData.qry[Object.keys(data)[i]]["$gt"] = moment.utc(data[Object.keys(data)[i]].split(",")[0], 'MM-DD-YYYY HH:mm').toDate();
 				mongoSelectData.qry[Object.keys(data)[i]]["$lt"] = moment.utc(data[Object.keys(data)[i]].split(",")[1], 'MM-DD-YYYY HH:mm').toDate();

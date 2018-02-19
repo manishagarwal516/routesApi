@@ -3,16 +3,16 @@
 2 info using npm@3.10.10
 3 info using node@v6.9.5
 4 verbose run-script [ 'prestart', 'start', 'poststart' ]
-5 info lifecycle routeapi@0.0.0~prestart: routeapi@0.0.0
-6 silly lifecycle routeapi@0.0.0~prestart: no script for prestart, continuing
-7 info lifecycle routeapi@0.0.0~start: routeapi@0.0.0
-8 verbose lifecycle routeapi@0.0.0~start: unsafe-perm in lifecycle true
-9 verbose lifecycle routeapi@0.0.0~start: PATH: /usr/local/lib/node_modules/npm/bin/node-gyp-bin:/home/manish-lappy/projects/routeApi/node_modules/.bin:/home/manish-lappy/bin:/home/manish-lappy/.local/bin:/home/manish-lappy/bin:/home/manish-lappy/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/usr/lib/jvm/java-8-oracle/bin:/usr/lib/jvm/java-8-oracle/db/bin:/usr/lib/jvm/java-8-oracle/jre/bin:/usr/lib/jvm/java-8-oracle/bin:/usr/lib/jvm/java-8-oracle/db/bin:/usr/lib/jvm/java-8-oracle/jre/bin:/home/manish-lappy/Android/Sdk/tools:/home/manish-lappy/Android/Sdk/platform-tools
-10 verbose lifecycle routeapi@0.0.0~start: CWD: /home/manish-lappy/projects/routeApi
-11 silly lifecycle routeapi@0.0.0~start: Args: [ '-c', 'node ./bin/www' ]
-12 silly lifecycle routeapi@0.0.0~start: Returned: code: 1  signal: null
-13 info lifecycle routeapi@0.0.0~start: Failed to exec start script
-14 verbose stack Error: routeapi@0.0.0 start: `node ./bin/www`
+5 info lifecycle customerserviceapi@0.0.0~prestart: customerserviceapi@0.0.0
+6 silly lifecycle customerserviceapi@0.0.0~prestart: no script for prestart, continuing
+7 info lifecycle customerserviceapi@0.0.0~start: customerserviceapi@0.0.0
+8 verbose lifecycle customerserviceapi@0.0.0~start: unsafe-perm in lifecycle true
+9 verbose lifecycle customerserviceapi@0.0.0~start: PATH: /usr/local/lib/node_modules/npm/bin/node-gyp-bin:/home/manish-lappy/projects/routeApi/node_modules/.bin:/home/manish-lappy/bin:/home/manish-lappy/.local/bin:/home/manish-lappy/bin:/home/manish-lappy/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/usr/lib/jvm/java-8-oracle/bin:/usr/lib/jvm/java-8-oracle/db/bin:/usr/lib/jvm/java-8-oracle/jre/bin:/usr/lib/jvm/java-8-oracle/bin:/usr/lib/jvm/java-8-oracle/db/bin:/usr/lib/jvm/java-8-oracle/jre/bin:/home/manish-lappy/Android/Sdk/tools:/home/manish-lappy/Android/Sdk/platform-tools
+10 verbose lifecycle customerserviceapi@0.0.0~start: CWD: /home/manish-lappy/projects/routeApi
+11 silly lifecycle customerserviceapi@0.0.0~start: Args: [ '-c', 'node ./bin/www' ]
+12 silly lifecycle customerserviceapi@0.0.0~start: Returned: code: 1  signal: null
+13 info lifecycle customerserviceapi@0.0.0~start: Failed to exec start script
+14 verbose stack Error: customerserviceapi@0.0.0 start: `node ./bin/www`
 14 verbose stack Exit status 1
 14 verbose stack     at EventEmitter.<anonymous> (/usr/local/lib/node_modules/npm/lib/utils/lifecycle.js:255:16)
 14 verbose stack     at emitTwo (events.js:106:13)
@@ -22,24 +22,24 @@
 14 verbose stack     at ChildProcess.emit (events.js:191:7)
 14 verbose stack     at maybeClose (internal/child_process.js:877:16)
 14 verbose stack     at Process.ChildProcess._handle.onexit (internal/child_process.js:226:5)
-15 verbose pkgid routeapi@0.0.0
+15 verbose pkgid customerserviceapi@0.0.0
 16 verbose cwd /home/manish-lappy/projects/routeApi
 17 error Linux 4.4.0-53-generic
 18 error argv "/usr/local/bin/node" "/usr/local/bin/npm" "start"
 19 error node v6.9.5
 20 error npm  v3.10.10
 21 error code ELIFECYCLE
-22 error routeapi@0.0.0 start: `node ./bin/www`
+22 error customerserviceapi@0.0.0 start: `node ./bin/www`
 22 error Exit status 1
-23 error Failed at the routeapi@0.0.0 start script 'node ./bin/www'.
+23 error Failed at the customerserviceapi@0.0.0 start script 'node ./bin/www'.
 23 error Make sure you have the latest version of node.js and npm installed.
-23 error If you do, this is most likely a problem with the routeapi package,
+23 error If you do, this is most likely a problem with the customerserviceapi package,
 23 error not with npm itself.
 23 error Tell the author that this fails on your system:
 23 error     node ./bin/www
 23 error You can get information on how to open an issue for this project with:
-23 error     npm bugs routeapi
+23 error     npm bugs customerserviceapi
 23 error Or if that isn't available, you can get their info via:
-23 error     npm owner ls routeapi
+23 error     npm owner ls customerserviceapi
 23 error There is likely additional logging output above.
 24 verbose exit [ 1, true ]

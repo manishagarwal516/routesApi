@@ -1,0 +1,7 @@
+{
+	"development" : {
+		"smtp_username" : "eventohub",
+		"smtp_password" : "Eventohub@15",
+		"smtp_host" : "smtp.gmail.com"
+	}
+}

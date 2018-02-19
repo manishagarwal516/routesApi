@@ -78,7 +78,7 @@ var mongoPool = {
 					res(err);
 				}else{
 					r = {
-						result: result[0]
+						result: result.insertedIds
 					};
 					res(err, r);
 				}

@@ -1,0 +1,6 @@
+development:
+  clientId: system
+  clientSecret: f558ba166258089b2ef322c340554c
+  memcached:
+    server: 127.0.0.1
+    port: 11211

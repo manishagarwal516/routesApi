@@ -4,10 +4,12 @@ var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
-
+var passport = require('passport');
 var index = require('./routes/index');
-var users = require('./routes/users');
+var user = require('./routes/users');
 var routes = require('./routes/routes');
+var oauth2 = require('./lib/oauth2');
+require('./lib/auth.js');
 
 var app = express();
 
@@ -22,6 +24,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+app.use(passport.initialize());
 
 app.use(function(req, res, next) {
   res.header("Access-Control-Allow-Origin", "*");
@@ -30,10 +33,21 @@ app.use(function(req, res, next) {
   // Request headers you wish to allow
   // Set to true if you need the website to include cookies in the requests sent to the API (e.g. in case you use sessions)
   res.setHeader('Access-Control-Allow-Credentials', true);
-  next();
+  // if (req.method === "OPTIONS") 
+  //   res.send(200);
+  // else 
+        next();
 });
+
+app.options("/*", function(req, res, next){
+  res.header('Access-Control-Allow-Origin', '*');
+  res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE,OPTIONS');
+  res.header('Access-Control-Allow-Headers', 'Content-Type, Authorization, Content-Length, X-Requested-With');
+  res.sendStatus(200);
+});
+app.use('/oauth/token', oauth2.token);
 app.use('/', index);
-app.use('/users', users);
+app.use('/user', user);
 
 // app.use('', function(req, res, next) {
 //     if(!req.headers['access-token']){
@@ -42,7 +56,7 @@ app.use('/users', users);
 //     	next();
 //     }
 // });
-
+app.use('*', passport.authenticate('bearer', { session: false }));
 app.use('/routes', routes);
 
 // catch 404 and forward to error handler

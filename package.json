@@ -1,20 +1,28 @@
 {
-  "name": "routeapi",
+  "name": "customerserviceapi",
   "version": "0.0.0",
   "private": true,
   "scripts": {
     "start": "node ./bin/www"
   },
   "dependencies": {
-    "async": "^2.5.0",
     "body-parser": "~1.17.1",
     "cookie-parser": "~1.4.3",
     "debug": "~2.6.3",
     "express": "~4.15.2",
     "js-yaml": "^3.10.0",
-    "moment": "^2.19.1",
-    "mongodb": "^2.2.33",
+    "memcached": "^2.2.2",
     "morgan": "~1.8.1",
+    "node-constants": "0.0.2",
+    "node-uuid": "^1.4.8",
+    "nodemailer": "^4.4.2",
+    "oauth2orize": "^1.11.0",
+    "passport": "^0.4.0",
+    "passport-http": "^0.3.0",
+    "passport-http-bearer": "^1.0.1",
+    "passport-local": "^1.0.0",
+    "passport-oauth2-client-password": "^0.1.2",
+    "pg": "^6.4.2",
     "pug": "~2.0.0-beta11",
     "serve-favicon": "~2.4.2",
     "underscore": "^1.8.3"
