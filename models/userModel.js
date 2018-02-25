@@ -16,8 +16,7 @@ var user = {
 		var mongoSelectData = {
 			"collection": "user",
 			"qry":{
-				"username": data.username,
-				"email_id": data.email_id,
+				"username": data.username
 			}
 		}
 		connector.mongoPool.query(mongoSelectData,function(err, result){
