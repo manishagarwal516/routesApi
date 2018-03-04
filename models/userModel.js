@@ -26,6 +26,7 @@ var user = {
 				var userData = {
 					"collection": "user",
 					"qry":{
+						"name": data.name,
 						"username": data.username,
 						"email_id": data.email_id,
 						"password": data.password,
