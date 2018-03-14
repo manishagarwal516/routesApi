@@ -78,7 +78,7 @@ var user = {
 					if(err){
 						res(err);
 					}else{
-						user.sendEmail(data.qry.email_id, verificationUUID, function(err, result){
+						user.sendEmail(data.qry.name,  data.qry.username, data.qry.email_id, verificationUUID, function(err, result){
 							console.log(err, result);
 							if(err){
 								callback(err);
@@ -93,12 +93,16 @@ var user = {
 		})
 	},
 
-	sendEmail : function(username, authToken, callback){
+	sendEmail : function(name, username, email_id, authToken, callback){
 		console.log("In sendEmail");
-		var to = username
+		var to = email_id;
 		var subject = "Add Super User"
 		var text = "http://ec2-13-126-65-82.ap-south-1.compute.amazonaws.com/#/superuser/confirmation/" + authToken;
-		var html = "<a href =" + text + ">" + text + "</a>";
+		var html = "";
+		html += "<span> name :"+ name +"</span><br/>"
+		html += "<span> Username :"+ username +"</span><br/>"
+		html += "<a href =" + text + ">" + 'Accept the request' + "</a>";
+
 
 		email.sendMail(to, subject, text, html, function(err, emailResponse) {
 			console.log(err, emailResponse);
